@@ -1,6 +1,17 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{kvmap}
 \usepackage{hyperref}
+\usepackage{xcolor}
+%\usepackage{lipsum}
+%\usepackage[htt]{hypenat}
+
+\definecolor{bgcolor}{gray}{0.95}
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{%
+	\colorbox{bgcolor}{\oldtexttt{#1}}}
+%\let\oldurl\url
+%\renewcommand{\url}{%
+%	\colorbox{bgcolor}{\oldurl{#1}}}
 
 \title{XNOR Gate in Arduino}
 \author{Ahilan R - FWC22090}
@@ -110,18 +121,21 @@ We set the digital pins D2, D3 as inputs and feed A, B into those. We utilise th
 \subsection{Software}
 We use platformIO to compile and upload the code to Arduino. 
 \bigskip
+%\texttt{\lipsum[1]}
 \begin{enumerate}
-	\item Download the source code in the desired location from
+	\item Download the source code%; from a desired directory run the command
 		\begin{itemize}
-			\item \url{https://github.com/ahilan22/fwc-1/tree/main/ide/assignment}
+			\item \texttt{svn export https://github}
+				\\ \texttt{.com/ahilan22/fwc-1/trunk}
+				\\ \texttt{/ide/assignment}
 		\end{itemize}
-	\item Compile the sketch
+	\item Compile the sketch%; from appropriate directory run the command
 		\begin{itemize}
-			\item pio run
+			\item \texttt{pio run}
 		\end{itemize}
 	\item Upload the sketch to Arduino
 		\begin{itemize}
-			\item pio -t nobuild -t upload
+			\item \texttt{pio -t nobuild -t upload}
 		\end{itemize}
 \end{enumerate}
 \bigskip
