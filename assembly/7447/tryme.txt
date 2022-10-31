@@ -1,0 +1,4 @@
+connect the inputs to the arduino directly to the A,B,C,D of 
+7447 instead of reading the inputs to the arduino from D9-13 
+and giving them as inputs for 7447 from D2-5(which were 
+declared as outputs). 

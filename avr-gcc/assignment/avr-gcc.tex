@@ -1,0 +1,125 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{kvmap}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\definecolor{bgcolor}{gray}{0.95}
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{%
+	\colorbox{bgcolor}{\oldtexttt{#1}}}
+
+\title{XNOR Gate in Arduino}
+\author{Ahilan R - FWC22090}
+
+\begin{document}
+\maketitle
+\bigskip
+\begin{abstract}
+We implement XNOR logic in Arduino by getting the boolean expression from it's K-map for it's truth table by writing our sketch in C. 
+\end{abstract}
+
+\section{\textbf{Theory}}
+Let $A$ and $B$ be the inputs to the gate, $Y$ be the output. The truth table for XNOR gate is given below.
+
+%\subsection{Truth Table}
+\begin{table}[h]
+	\centering
+	\begin{tabular}[20pt]{|c|c|c|}
+		\hline
+		\textbf{A}&\textbf{B}&\textbf{Y}\\
+		\hline
+		0&0&1\\
+		\hline
+		0&1&0\\
+		\hline
+		1&0&0\\
+		\hline
+		1&1&1\\   
+		\hline 
+	\end{tabular}
+\end{table}
+
+%\subsection{K-map}
+K-map for the above mentioned truth table:\\
+\begin{table}[h]
+	\centering
+	\begin{kvmap}
+		\kvlist{2}{2}{1,0,0,1}{B,A}
+	\end{kvmap}
+\end{table}
+
+Simplified K-map:
+\begin{table}[h]
+	\centering
+	\begin{kvmap}
+		\kvlist{2}{2}{1,0,0,1}{B,A}
+		\bundle[color=red,reducespace=1pt]{0}{0}{0}{0}
+		\bundle[color=red,reducespace=1pt]{1}{1}{1}{1}
+		\bundle[color=green,reducespace=1pt]{1}{0}{1}{0}
+		\bundle[color=green,reducespace=1pt]{0}{1}{0}{1}
+	\end{kvmap}
+\end{table}
+
+%\subsection{Boolean Expression}
+Collecting minterms from the kmap, i.e., where $Y=1$, we get the boolean expression in sum of products form for XNOR gate as following.
+\begin{equation}
+	Y = A^{\prime}B^{\prime}  +  AB
+\end{equation}
+And for product of sums form, we get maxterms, where $Y=0$, we get the boolean expression as following.
+\begin{equation}
+	Y = (A^{\prime}+B)(A+B^{\prime})
+\end{equation}
+\newpage
+
+\section{\textbf{Implementation}}
+\bigskip
+
+%\subsection{Components required}
+Components Required:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Components}&\textbf{Qty.}\\
+		\hline
+		Arduino UNO&1\\
+		\hline
+		Breadboard&1\\
+		\hline
+		Jumper wires&4\\
+		\hline
+	\end{tabular}
+\end{table}
+
+%\subsection{Connections}
+Connections:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Arduino}&2&3\\
+		\hline
+		\textbf{Inputs}&A&B\\
+		\hline
+	\end{tabular}
+\end{table}
+
+In addition to the above table, we connect $5V$ and $GND$ pins of Arduino to different bus strips of breadboard to input binary values back to the input pins of Arduino.
+
+\subsection{Sketch}
+We set the digital pins D2, D3 as inputs and feed A, B into those. We utilise the builtin LED at D13, by setting D13 as output. So, when $Y=1$, LED glows and when $Y=0$ LED doesn't glow. This sketch in assembly code is given in the below link.
+
+\bigskip
+\url{https://github.com/ahilan22/fwc-1/tree/main/avr-gcc/assignment/code/main.c}
+
+\subsection{Software}
+We use avr-gcc compilier to convert the C code into AVR code(binary source that can be uploaded to AVR micro-controller).
+\bigskip
+
+\begin{enumerate}
+	\item Download the source code and the Makefile in the desired location from the link given above.
+	\item Build and execute the code by typing \texttt{make} in the appropriate directory.
+\end{enumerate}
+\bigskip
+We've successfully implemented XNOR logic in Arduino.
+\end{document}
