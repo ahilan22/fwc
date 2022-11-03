@@ -1,0 +1,209 @@
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{purple}{RGB}{128,0,128}
+
+\begin{axis}[
+height=\figheight,
+legend cell align={left},
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=lightgray204},
+tick align=outside,
+tick pos=left,
+width=\figwidth,
+x grid style={darkgray176},
+xlabel={\(\displaystyle X\)},
+xmajorgrids,
+xmin=-2.22380952380953, xmax=7.22380952380953,
+xtick style={color=black},
+y grid style={darkgray176},
+ylabel style={rotate=-90.0},
+ylabel={\(\displaystyle Y\)},
+ymajorgrids,
+ymin=-0.52, ymax=6.52,
+ytick style={color=black}
+]
+\addplot [semithick, black, forget plot]
+table {%
+2 1
+2.11111111111111 1
+2.22222222222222 1
+2.33333333333333 1
+2.44444444444444 1
+2.55555555555556 1
+2.66666666666667 1
+2.77777777777778 1
+2.88888888888889 1
+3 1
+};
+\addplot [semithick, black, forget plot]
+table {%
+3 1
+3 1.44444444444444
+3 1.88888888888889
+3 2.33333333333333
+3 2.77777777777778
+3 3.22222222222222
+3 3.66666666666667
+3 4.11111111111111
+3 4.55555555555556
+3 5
+};
+\addplot [semithick, black, forget plot]
+table {%
+3 5
+2.88888888888889 5
+2.77777777777778 5
+2.66666666666667 5
+2.55555555555556 5
+2.44444444444444 5
+2.33333333333333 5
+2.22222222222222 5
+2.11111111111111 5
+2 5
+};
+\addplot [semithick, black, forget plot]
+table {%
+2 5
+2 4.55555555555556
+2 4.11111111111111
+2 3.66666666666667
+2 3.22222222222222
+2 2.77777777777778
+2 2.33333333333333
+2 1.88888888888889
+2 1.44444444444444
+2 1
+};
+\addplot [semithick, purple, dashed]
+table {%
+3.1 5.4
+2.96666666666667 4.86666666666667
+2.83333333333333 4.33333333333333
+2.7 3.8
+2.56666666666667 3.26666666666667
+2.43333333333333 2.73333333333333
+2.3 2.2
+2.16666666666667 1.66666666666667
+2.03333333333333 1.13333333333333
+1.9 0.6
+};
+\addlegendentry{$Diag 1$}
+\addplot [semithick, blue, dashed]
+table {%
+1.9 5.4
+2.03333333333333 4.86666666666667
+2.16666666666667 4.33333333333333
+2.3 3.8
+2.43333333333333 3.26666666666667
+2.56666666666667 2.73333333333333
+2.7 2.2
+2.83333333333333 1.66666666666667
+2.96666666666667 1.13333333333333
+3.1 0.6
+};
+\addlegendentry{$Diag 2$}
+\addplot [semithick, black, dashed, forget plot]
+table {%
+2 6.2
+2 5.48888888888889
+2 4.77777777777778
+2 4.06666666666667
+2 3.35555555555556
+2 2.64444444444444
+2 1.93333333333333
+2 1.22222222222222
+2 0.511111111111111
+2 -0.2
+};
+\addplot [semithick, black, dashed, forget plot]
+table {%
+4.2 1
+3.82222222222222 1
+3.44444444444444 1
+3.06666666666667 1
+2.68888888888889 1
+2.31111111111111 1
+1.93333333333333 1
+1.55555555555556 1
+1.17777777777778 1
+0.8 1
+};
+\addplot [semithick, black, dashed, forget plot]
+table {%
+3 6.2
+3 5.48888888888889
+3 4.77777777777778
+3 4.06666666666667
+3 3.35555555555556
+3 2.64444444444444
+3 1.93333333333333
+3 1.22222222222222
+3 0.511111111111111
+3 -0.2
+};
+\addplot [semithick, black, dashed, forget plot]
+table {%
+4.2 5
+3.82222222222222 5
+3.44444444444444 5
+3.06666666666667 5
+2.68888888888889 5
+2.31111111111111 5
+1.93333333333333 5
+1.55555555555556 5
+1.17777777777778 5
+0.8 5
+};
+\draw (axis cs:2.01,0.7) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{A};
+\draw (axis cs:3.02,0.7) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{B};
+\draw (axis cs:2.02,5.08) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{D};
+\draw (axis cs:3.02,5.08) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{C};
+\draw (axis cs:1.6,0) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{$L_1$};
+\draw (axis cs:1,1.2) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{$L_2$};
+\draw (axis cs:3.2,6) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{$L_3$};
+\draw (axis cs:1,5.2) node[
+  scale=0.5,
+  anchor=base west,
+  text=black,
+  rotate=0.0
+]{$L_4$};
+\end{axis}
+
+\end{tikzpicture}
