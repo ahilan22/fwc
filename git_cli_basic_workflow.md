@@ -17,4 +17,4 @@
     git commit -m "mandatory message"
     git push
     ```
-8. usually command line prompts for git username, then it asks for password-->enter the personal access token here
+1. usually command line prompts for git username, then it asks for password-->enter the personal access token here
