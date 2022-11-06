@@ -6,9 +6,9 @@
 
 ## cloning your repo  
 1. create a new repo using github website or go to your existing repo 
-1. copy the repo's https link from **Code** button; _use PC mode if you are using browser on mobile_
+1. copy the repo's https link from **Code** button; _(use Desktop Site if you are using browser on mobile)_
 1. go to your local directory where you need to place your repo (we'll clone your repo there from site)
-    1. _in termux_: clone into to root directory (not working in sdcard directory "for me")
+    * _in termux_: clone into to root directory (not working in sdcard directory "for me")
 1. open that directory in terminal and ` git clone https://github.com/gadepall/fwc-1.git `
 
 ## uploading your repo - **Basic Workflow**
