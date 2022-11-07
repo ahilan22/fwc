@@ -1,0 +1,207 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage[cmex10]{amsmath}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage[font=normal]{caption}
+\pgfplotsset{compat=newest}
+\pgfplotsset{scaled y ticks=false}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{tikz}
+
+\pgfplotsset{compat=1.11,
+ /pgfplots/ybar legend/.style={
+ /pgfplots/legend image code/.code={
+ \draw[##1,/tikz/.cd,yshift=-0.25em]
+ (0cm,0cm) rectangle (3pt,0.8em);},
+ },
+}
+
+\let\vec\mathbf
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\ensuremath{\left\lVert(#1\right\rVert)}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\title{Circles using Python}
+\author{Ahilan R - FWC22090}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\subsection*{\textbf{Problem}}
+Let $C_1$ and $C_2$ be two circles with $C_2$ lying inside $C_1$. A circle $C$ lying inside $C_1$ touches $C_1$ internally and $C_2$ externally. Identify the locus of the center of $C$. 
+
+\subsection*{\textbf{Solution}}
+
+\begin{figure}[h]
+\centering
+\def\figwidth{\linewidth}
+\def\figheight{0.35\textheight} % Feel free to change
+\input{ellipse2}
+\label{fig:rough}
+\caption{Rough sketch of given problem}
+\end{figure}
+
+\begin{table}[h]
+	\small
+	\centering
+	\begin{tabular}[20pt]{|c|c|}
+		\hline
+		\textbf{Symbol}&\textbf{Description}\\
+		\hline
+			$A$&Center of $C_1$\\
+		\hline
+			$B$&Center of $C_2$\\
+		\hline
+			$P$&Center of $C$\\
+		\hline
+			$r_1$&Radius of $C_1$\\
+		\hline 
+			$r_2$&Radius of $C_2$\\
+		\hline 
+			$r$&Radius of $C$\\
+		\hline 
+	\end{tabular}
+\end{table}
+
+From the diagram we can deduce, 
+%\begin{align} TeXLive doesn't allow split inside align?? But why tho?
+\begin{equation}
+\begin{split}
+	AP &= AT_1 - PT_1 \\
+	&= r_A - r \label{eq:1}
+\end{split} 
+\end{equation} 
+\begin{equation}
+\begin{split}
+	BP &= BT_2 + PT_2 \\
+	&= r - r_A \label{eq:2}
+\end{split} 
+\end{equation} 
+%\end{align} 
+
+Adding \eqref{eq:1} and \eqref{eq:2} we get,
+\begin{equation} \label{eq:const}
+\begin{split}
+	AP + BP &= (r_A-r) + (r-r_B) \\
+	&=r_A+r_B = c 
+\end{split}
+\end{equation}
+%	\text{Let, } \quad c &= r_A + r_B \\
+%		\implies \quad AP + BP &= c \label{eq:const}
+Since R.H.S of \eqref{eq:const} is constant, we can say that the locus of $P$ is ellipse, by the defintion of ellipse.
+
+\subsection*{\textbf{Construction}}
+Let the circles $C_1$, $C_2$ and $C$ be represented by following equations respectively,
+\begin{align*}
+		\vec{x^{\top}}\vec{I}\vec{x} + 2\vec{u_1^{\top}}\vec{x} + f_2 = 0 \\
+		\vec{x^{\top}}\vec{I}\vec{x} + 2\vec{u_2^{\top}}\vec{x} + f_2 = 0 \\
+		\vec{x^{\top}}\vec{I}\vec{x} + 2\vec{u^{\top}}\vec{x} + f = 0
+\end{align*}
+where,
+\begin{table}[h]
+		\normalsize
+	\centering
+	\begin{tabular}[20pt]{|c|c|c|}
+		\hline
+		%			\textbf{Symbol}&\textbf{Description}&\textbf{Value}\\
+		%		\hline
+			Center of $C_1$&$\vec{A}$&$-\vec{u_1}$\\
+		\hline                           
+			Center of $C_2$&$\vec{B}$&$\vec{-u_2}$\\
+		\hline                           
+			Center of $C$&$\vec{P}$&$\vec{-u}$\\
+		\hline
+	\end{tabular}
+%\caption{Defining $u_1$ and $u_2$}
+\end{table} \\
+For the sake of simplicity, let's assume $\vec{A} = \myvec{0\\0}$.% We can linear transform back to the original form if needed.
+\begin{align*}
+	AP &= \norm{\vec{A}-\vec{P}} \\
+	&= \norm{\vec{u}} \\
+	BP &= \norm{\vec{B}-\vec{P}} \\
+	&= \norm{\vec{u_2-u}}
+\end{align*} 
+Now, \eqref{eq:const} becomes 
+\begin{gather*}
+	\norm{\vec{u_2-u}}+\norm{\vec{u}} = c\\
+	\norm{\vec{u_2-u}}^2 = \brak{c-\norm{\vec{u}}}^2 \\
+%\begin{align*}
+	\brak{\vec{{u_2-u}^{\top}}}\brak{\vec{u_2-u}} = c^2 + \vec{u^{\top}}\vec{u} -2c\norm{\vec{u}} \\
+	\vec{u_2^{\top}}\vec{u_2} + \vec{u^{\top}}\vec{u} - 2\vec{u_2^{\top}}\vec{u} = c^2 + \vec{u^{\top}}\vec{u} -2c\norm{\vec{u}} \\
+	- 2\vec{u_2^{\top}}\vec{u} = c^2 - \vec{u_2^{\top}}\vec{u_2} - 2c\norm{\vec{u}} 
+\end{gather*}
+%\end{align*} 
+Taking $\vec{u_2^{\top}}\vec{u_2} - c^2 = k$, %and squaring on both sides,
+\begin{gather*}
+	\brak{k - 2\vec{u_2^{\top}}\vec{u}}^2 =  \brak{-2c\norm{\vec{u}}}^2 \\
+	k^2 + 4\brak{\vec{u_2^{\top}}\vec{u}}\brak{\vec{u_2^{\top}}\vec{u}} - 4k\vec{u_2^{\top}}\vec{u} =  4c^2\vec{u^{\top}}\vec{u} \\
+	4c^2\vec{u^{\top}}\vec{u} - 4\vec{u^{\top}}\brak{\vec{u_2}\vec{u_2^{\top}}}\vec{u} + 4k\vec{u_2^{\top}}\vec{u} - k^2 =  0 \\
+		\implies \quad \vec{x^{\top}}\vec{V}\vec{x} + 2\vec{w^{\top}}\vec{x} + g = 0 \numberthis \label{eq:lips}\\
+\end{gather*} 
+\eqref{eq:lips} is the equation of the ellipse, the locus of $P$, where,
+\begin{align*}
+	\vec{V} &= 4c^2\vec{I} - 4\vec{u_2}\vec{u_2^{\top}} \text{,}\\
+	\vec{w} &= 2k\vec{u_2} \quad \text{and} \quad g = -k^2 \text{.}
+\end{align*}
+
+\subsection*{\textbf{Construction Parameters Used}}
+
+\begin{table}[h!]
+		\small
+	\centering
+	\begin{tabular}[20pt]{|c|c|c|}
+		\hline
+		\textbf{Symbol}&\textbf{Description}&\textbf{Value}\\
+		\hline
+			$A$&Center of $C_1$&$\myvec{0\\0}$\\
+		\hline
+			$B$&Center of $C_2$&$\myvec{11\\0}$\\
+		\hline
+			$P$&Center of $C$&$\myvec{-4\\0}$\\
+		\hline
+			$r_1$&Radius of $C_1$&16\\
+		\hline 
+			$r_2$&Radius of $C_2$&3\\
+		\hline 
+			$r$&Radius of $C$&12\\
+		\hline 
+			$r$&Radius of $C$&12\\
+		\hline 
+			$T_1D$&Diameter of $C_1$&\\
+		\hline 
+			gap&Length of $BD$&2\\
+		\hline 
+	\end{tabular}
+    \caption{Circles parameters}
+	\label{table:1}
+\end{table}
+On substituting respective values taken from \ref{table:1}, the equation of the locus of, $P$, \eqref{eq:lips} will be
+
+\begin{align}
+		\vec{x^{\top}}\myvec{60&0\\0&90.25}\vec{x} + 2\myvec{330&0}\vec{x} - 3600 = 0 \label{eq:eli}
+\end{align}
+
+\begin{table}[h!]
+	\small
+	\centering
+	\begin{tabular}[20pt]{|c|c|c|}
+		\hline
+		\textbf{Symbol}&\textbf{Description}&\textbf{Value}\\
+		\hline 
+			a&Semi-major axis&9.5\\
+		\hline 
+			b&Semi-minor axis&7.746\\
+		\hline 
+			$\vec{c}$&Center of Ellipse&$\myvec{5.5\\0}$\\
+		\hline 
+	\end{tabular}
+		\caption{Ellipse parameters from \eqref{eq:eli}}
+	\label{table:2}
+\end{table}
+
+\end{document}
