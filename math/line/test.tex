@@ -75,17 +75,14 @@ So the $x$ and $y$ intercepts of the given lines are
 
 %\subsection{Observation}
 The pair of straight lines represented by \eqref{eq:lp1} are parallel to y-axis and the pair of straight lines represented by \eqref{eq:lp2} are parallel to x-axis.
-
 %\medskip
 %since \eqref{eq:lp1} and \eqref{eq:lp2} are quadratic in single variable.
-
 We can also say that the lines in \eqref{eq:lp1} are normal to $\vec{e_1}$ and the lines in \eqref{eq:lp2} are normal to $\vec{e_2}$,  
 where, $\vec{e_1}$ and $\vec{e_2}$ are standard basis vectors, given by
 \begin{align*}
 		\vec{e_1} = \myvec{1\\0} &\text{ and   }
 		\vec{e_2} = \myvec{0\\1} \text{.} 
 \end{align*}
-
 %\subsection{Line Equations in Vector Form}
 Equations of the sides of parallelogram in vector form,  
 \begin{align}
@@ -102,7 +99,6 @@ Equations of the sides of parallelogram in vector form,
 
 %\subsection{Obtaining Vertices}
 Intersection of given sides yields the vertices of parallelogram. Let's find the point A, say, which is intersection of line $L_1$  and line $L_2$ .\\ %\eqref{eq:line_2} \eqref{eq:line_1}
-
 %\subsection{Diagram}
 %\begin{figure}[h]
 %\centering
@@ -110,9 +106,7 @@ Intersection of given sides yields the vertices of parallelogram. Let's find the
 %\caption{Parallelogram generated using python}
 %\label{fig:rect_py}
 %\end{figure}
-
 %\vspace{-0.5cm}
-
 On combining \eqref{eq:line_1} and \eqref{eq:line_2}, 
 \begin{align*}
 		\myvec{ \vec{e_1} & \vec{e_2}}^{\top}\vec{A}&= \myvec{\vec{e_1}^{\top}\vec{X_1}\\ \vec{e_2}^{\top}\vec{Y_1} }  \\[0.7ex]
@@ -124,7 +118,6 @@ On combining \eqref{eq:line_1} and \eqref{eq:line_2},
 %\begin{align*}
 %	\vec{B} &= \vec{n}^{-1} \myvec{\vec{e_1}^{\top}\vec{X_2}\\ \vec{e_2}^{\top}\vec{Y_1} }
 %\end{align*}
-
 Similarly, we can obtain other vertices as
 \begin{align*}
 	\vec{B} &= \vec{n}^{-1} \myvec{\vec{e_1}^{\top}\vec{X_2}\\ \vec{e_2}^{\top}\vec{Y_1} } \text{, } \\[0.7ex]
@@ -137,7 +130,6 @@ where,
 	C & \text{ is the intersection of lines } L_3 \text{ and }L_4,\\[-0.5ex]
 	D & \text{ is the intersection of lines } L_4 \text{ and }L_1.
 \end{align*}
-
 \begin{figure}[h]
 \centering
 \def\figwidth{\linewidth}
@@ -155,23 +147,18 @@ where,
 %	\vec{m_{BD}} &= \vec{e_2} - \vec{e_1}
 %\end{align*}
 \newpage
-
 %Therefore, the diagonals of the parallelogram are $AC$ and $BD$.
 %\begin{align*}
 %	\vec{\overrightarrow{AC}} &= \vec{C} - \vec{A} \\
 %	\vec{\overrightarrow{BD}} &= \vec{D} - \vec{B}
 %\end{align*}
 Let the normal vectors to the diagonals $\overrightarrow{AC}$ and $\overrightarrow{BD}$ be $\vec{n_1}$ and $\vec{n_2}$ respectively,
-
 \begin{align}
 	\vec{n_1} &= \vec{R}_{\frac{\pi}{2}} \brak{\vec{A-C}} \\
 	\vec{n_2} &= \vec{R}_{\frac{\pi}{2}} \brak{\vec{B-D}}
 \end{align}
-
 where, \[ \vec{R}_{\theta} = \myvec{\cos  \theta & -\sin \theta \\ \sin \theta & \cos \theta} \text{.} \]
-
 Therefore, the equations of the diagonals passing through $A$ and $B$ in normal form, 
-
 \begin{align}
 		\vec{n_1^{\top}}\brak{{\vec{x}-\vec{A}}} = 0\text{,} \label{eq:diag_1}\\
 		\vec{n_2^{\top}}\brak{{\vec{x}-\vec{B}}} = 0\text{.} \label{eq:diag_2}

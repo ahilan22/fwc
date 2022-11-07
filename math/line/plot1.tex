@@ -4,8 +4,12 @@
 \definecolor{darkgray176}{RGB}{176,176,176}
 \definecolor{lightgray204}{RGB}{204,204,204}
 \definecolor{purple}{RGB}{128,0,128}
+\tikzstyle{every node}=[font=\Large]
 
 \begin{axis}[
+legend style={nodes={scale=0.75, font=\normalsize, transform shape}, at={(1,0)}, anchor=south east, draw=black},
+label style={font=\normalsize},
+tick label style={font=\small},
 height=\figheight,
 legend cell align={left},
 legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=lightgray204},
@@ -13,13 +17,13 @@ tick align=outside,
 tick pos=left,
 width=\figwidth,
 x grid style={darkgray176},
-xlabel={\(\displaystyle X\)},
+xlabel={\(\displaystyle x\)},
 xmajorgrids,
 xmin=-2.22380952380953, xmax=7.22380952380953,
 xtick style={color=black},
 y grid style={darkgray176},
 ylabel style={rotate=-90.0},
-ylabel={\(\displaystyle Y\)},
+ylabel={\(\displaystyle y\)},
 ymajorgrids,
 ymin=-0.52, ymax=6.52,
 ytick style={color=black}
@@ -180,19 +184,19 @@ table {%
   text=black,
   rotate=0.0
 ]{C};
-\draw (axis cs:1.6,0) node[
+\draw (axis cs:1.4,0) node[
   scale=0.5,
   anchor=base west,
   text=black,
   rotate=0.0
 ]{$L_1$};
-\draw (axis cs:1,1.2) node[
+\draw (axis cs:0.7,1.2) node[
   scale=0.5,
   anchor=base west,
   text=black,
   rotate=0.0
 ]{$L_2$};
-\draw (axis cs:3.2,6) node[
+\draw (axis cs:3.1,6) node[
   scale=0.5,
   anchor=base west,
   text=black,
