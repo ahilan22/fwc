@@ -46,102 +46,102 @@ Find the equation of the common tangent to the curves
 \subsection*{\textbf{Solution}}
 \eqref{eq:parab} and \eqref{eq:hyp} can be expressed in vector forms
 \begin{align}
-		\vec{x^{\top}}\vec{V_1}\vec{x} + 2\vec{u_1^{\top}}\vec{x} + f_1 &= 0  \label{eq:par} \\
-		\vec{x^{\top}}\vec{V_2}\vec{x}  + 2\vec{u_2^{\top}}\vec{x} + f_2 &= 0 \label{eq:hi} 
+		\vec{x}^{\top}\vec{V_1}\vec{x} + 2\vec{u_1}^{\top}\vec{x} + f_1 &= 0  \label{eq:par} \\
+		\vec{x}^{\top}\vec{V_2}\vec{x}  + 2\vec{u_2}^{\top}\vec{x} + f_2 &= 0 \label{eq:hi} 
 \end{align}
 where,
-\begin{align*}
+\begin{align}
 		\vec{V_1} &= \myvec{0&0\\0&1} \text{,}\quad  
 		\vec{u_1} = \myvec{-8\\0}  \text{,} \quad  f_1 = 0\\
 		\vec{V_2} &= \myvec{0&\frac{1}{2}\\\frac{1}{2}&0} \text{,} \quad 
 		  \vec{u_2} = \myvec{0\\0} \text{,}  \quad f_2 = 1 \text{.} %\quad \text{and}
-\end{align*}
+\end{align}
 \\
 In projective plane \eqref{eq:par} and \eqref{eq:hi} becomes %are represented by
 \begin{align}
-		\vec{X^{\top}}\vec{M_1}\vec{X} &= 0 \label{eq:ppar} \\
-		\vec{X^{\top}}\vec{M_2}\vec{X} &= 0 \label{eq:phi} 
+		\vec{X}^{\top}\vec{M_1}\vec{X} &= 0 \label{eq:ppar} \\
+		\vec{X}^{\top}\vec{M_2}\vec{X} &= 0 \label{eq:phi} 
 \end{align}
 where,
-\begin{align*}
-		\vec{M_1} &= \myvec{\vec{V_1}&\vec{u_1}\\\vec{u_1^{\top}}&f_1} \text{, } \\[0.5ex]
-		\vec{M_2} &= \myvec{\vec{V_2}&\vec{u_2}\\\vec{u_2^{\top}}&f_2} \text{,} \text{ and } 
+\begin{align}
+		\vec{M_1} &= \myvec{\vec{V_1}&\vec{u_1}\\\vec{u_1}^{\top}&f_1} \text{, } \\[0.5ex]
+		\vec{M_2} &= \myvec{\vec{V_2}&\vec{u_2}\\\vec{u_2}^{\top}&f_2} \text{,} \text{ and } 
 		\vec{X}=\myvec{\vec{x}\\1} 
-\end{align*}
+\end{align}
 Here, $\vec{M_1}$ and $\vec{M_2}$ are symmetric, and $\vec{X}$ is called the homogeneous coordinate of $\vec{x}$. \\
 The dual conics of \eqref{eq:ppar} and \eqref{eq:phi} is given by
 \begin{align}
-		\vec{X^{\top}}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X} &= 0 \label{eq:pd} \\
-		\vec{X^{\top}}\mydet{\vec{M_2}}\vec{M_2^{-1}}\vec{X} &= 0 \label{eq:hd} 
+		\vec{X}^{\top}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X} &= 0 \label{eq:pd} \\
+		\vec{X}^{\top}\mydet{\vec{M_2}}\vec{M_2^{-1}}\vec{X} &= 0 \label{eq:hd} 
 \end{align}
-The dual conics \eqref{eq:pd} and \eqref{eq:hd} intersect at most at 4 points $\vec{x_i}$. The corresponding common tangent(s) is given by \[ \myvec{\vec{x_i^{\top}}&1}\vec{X}=0 \label{eq:tangent_eqn} \numberthis \]
-\begin{align*}
-		\mydet{\vec{M_1}}\vec{M_1^{-1}} &\text{ can be written as } \myvec{\vec{N_1}&\vec{w_1}\\\vec{w_1^{\top}}&k_1} \\[0.5ex]
-		\mydet{\vec{M_2}}\vec{M_2^{-1}} &\text{ can be written as } \myvec{\vec{N_2}&\vec{w_2}\\\vec{w_2^{\top}}&k_2}
-\end{align*}
+The dual conics \eqref{eq:pd} and \eqref{eq:hd} intersect at most at 4 points $\vec{x_i}$. The corresponding common tangent(s) is given by \[ \myvec{\vec{x_i}^{\top}&1}\vec{X}=0 \label{eq:tangent_eqn} \numberthis \]
+\begin{align}
+		\mydet{\vec{M_1}}\vec{M_1^{-1}} &\text{ can be written as } \myvec{\vec{N_1}&\vec{w_1}\\\vec{w_1}^{\top}&k_1} \\[0.5ex]
+		\mydet{\vec{M_2}}\vec{M_2^{-1}} &\text{ can be written as } \myvec{\vec{N_2}&\vec{w_2}\\\vec{w_2}^{\top}&k_2}
+\end{align}
 Let's take, 
-\begin{align*}
+\begin{align}
 		\vec{N} = \vec{N_1}+\mu\vec{N_2} \quad \text{and} \quad
 		\vec{w} = \vec{w_1}+\mu\vec{w_2} \text{.}
-\end{align*}
+\end{align}
 \\
 The intersection of dual conics is given by
 \begin{align}
 \mydet{\vec{M_1}}\vec{M_1^{-1}}+\mu\mydet{\vec{M_2}}\vec{M_2^{-1}} = 0 \label{eq:dual_intersect}
 \end{align}
 The intersection \eqref{eq:dual_intersect} represents a pair of straight lines if 
-\begin{gather*}
+\begin{gather}
 		\mydet{\mydet{\vec{M_1}}\vec{M_1^{-1}}+\mu\mydet{\vec{M_2}}\vec{M_2^{-1}}} = 0 \\
 	\text{and }	\mydet{\vec{N_1}+\mu\vec{N_2}} < 0	
-\end{gather*}
+\end{gather}
 On solving, we get $\mu=-16$. % Substituting $\mu$ in \eqref{eq:dual_intersect}, we get 
 The point of intersection of two lines of the pair of straight lines represented by \eqref{eq:dual_intersect}, point $H$, is given by %The center of the pair of straight lines given by \eqref{eq:dual_intersect} is  
 \begin{equation}
 		\vec{h} = -\vec{N}^{-1}\vec{w} %-\brak{\vec{N_1}+\mu\vec{N_2}}^{-1}\brak{\vec{w_1}+\mu\vec{w_2}}
 \end{equation}
 The normal vectors of the two lines of \eqref{eq:dual_intersect} are given by
-\begin{align*}
+\begin{align}
 		\vec{n_1} &= \vec{P}\myvec{\sqrt{\abs{\lambda_1}}\\ \sqrt{\abs{\lambda_2}}} \text{ and } \\
 		\vec{n_2} &= \vec{P}\myvec{\sqrt{\abs{\lambda_1}}\\ -\sqrt{\abs{\lambda_2}}}
-\end{align*}
+\end{align}
 where $\lambda_i, \vec{P}$ are the eigenparameters of $\vec{N}$. Then, the direction vectors of lines of \eqref{eq:dual_intersect} are given by
 \begin{gather}
 		\vec{m_1} = \vec{R}_{\frac{\pi}{2}}\vec{n_1} \text{ and } \vec{m_2} = \vec{R}_{\frac{\pi}{2}}\vec{n_2}
 \end{gather}
 where, \[ \vec{R}_{\theta} = \myvec{\cos  \theta & -\sin \theta \\ \sin \theta & \cos \theta} \text{.} \]
 Therefore, the lines of \eqref{eq:dual_intersect} are given by
-\begin{align*}
+\begin{align}
 		\vec{x} = \vec{h} + \kappa\vec{m_1} \quad \text{and} \quad
 		\vec{x} = \vec{h} + \kappa\vec{m_2} 
-\end{align*}
+\end{align}
 \newpage
-The points of intersection of the lines $\vec{x} = \vec{h} + \kappa\vec{m_k}$ with a dual conic, say $\vec{X^{\top}}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X}$, which are also the point(s) intersection of the dual conics, are given by
+The points of intersection of the lines $\vec{x} = \vec{h} + \kappa\vec{m_k}$ with a dual conic, say $\vec{X}^{\top}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X}$, which are also the point(s) intersection of the dual conics, are given by
 \begin{align}
-		\vec{x_j} = \vec{h} + \kappa_j\vec{m_k}
+		\vec{x_i} = \vec{h} + \kappa_j\vec{m_k}
 \end{align}
 where,
 {\tiny
-\begin{multline*}
+\begin{multline}
 \kappa_j = \frac{1}
 {
 \vec{m_1}^T\vec{N_1}\vec{m_1}
 }
-\lbrak{-\vec{m_1^{\top}}\brak{\vec{N_1}\vec{h}+\vec{w_1}}}
+\lbrak{-\vec{m_1}^{\top}\brak{\vec{N_1}\vec{h}+\vec{w_1}}}
 \\[0.5ex]
 \pm
 \rbrak{\sqrt{
 \sbrak{
-\vec{m_1^{\top}}\brak{\vec{N_1}\vec{h}+\vec{w_1}}
+\vec{m_1}^{\top}\brak{\vec{N_1}\vec{h}+\vec{w_1}}
 }^2
 -
 \brak
 {
-\vec{h^{\top}}\vec{N_1}\vec{h} + 2\vec{w_1^{\top}}\vec{h} +k_1
+\vec{h}^{\top}\vec{N_1}\vec{h} + 2\vec{w_1}^{\top}\vec{h} +k_1
 }
-\brak{\vec{m_1^{\top}}\vec{N_1}\vec{m_1}}
+\brak{\vec{m_1}^{\top}\vec{N_1}\vec{m_1}}
 }
 }
-\end{multline*}
+\end{multline}
 }
 \vspace{-0.5cm}
 \begin{figure}[h]
@@ -157,11 +157,11 @@ where,
 Upon substituting respective values we find that the dual conics \eqref{eq:pd} and \eqref{eq:hd} inersect at a single point, $P=\vec{p}=\myvec{0.5\\-0.5}$. 
 \\[0.7ex]
 Then from \eqref{eq:tangent_eqn}, 
-\begin{align*}
-		\myvec{\vec{p^{\top}}&1}\vec{X} &= 0 \\
-		\vec{p^{\top}}\vec{x} + 1 &= 0 \\
+\begin{align}
+		\myvec{\vec{p}^{\top}&1}\vec{X} &= 0 \\
+		\vec{p}^{\top}\vec{x} + 1 &= 0 \\
 		\myvec{0.5&-0.5}\vec{x} &= -1 \label{eq:comm_tang} \numberthis
-\end{align*}
+\end{align}
 Thus, \eqref{eq:comm_tang} is the equation of common tangent to the curves \eqref{eq:parab} and \eqref{eq:hyp}.
 \newpage
 
