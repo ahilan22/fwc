@@ -45,18 +45,10 @@ Find the equation of the common tangent to the curves
 \end{align}
 \subsection*{\textbf{Solution}}
 \eqref{eq:parab} and \eqref{eq:hyp} can be expressed in vector forms
-\begin{equation}
-\begin{split} 
-		\vec{x^{\top}}\vec{V_1}\vec{x} + 2\vec{u_1^{\top}}\vec{x} + f_1 &= 0  \\
-		\implies \quad \vec{x^{\top}}\vec{V_1}\vec{x} + 2\vec{u_1^{\top}}\vec{x} &= 0 \label{eq:par}
-\end{split} 
-\end{equation} 
-\begin{equation}
-\begin{split} 
-		\vec{x^{\top}}\vec{V_2}\vec{x}  + 2\vec{u_2^{\top}}\vec{x} + f_2 &= 0 \\
-		\implies \quad \vec{x^{\top}}\vec{V_2}\vec{x}  + f_2 &= 0 \label{eq:hi}
-\end{split} 
-\end{equation}
+\begin{align}
+		\vec{x^{\top}}\vec{V_1}\vec{x} + 2\vec{u_1^{\top}}\vec{x} + f_1 &= 0  \label{eq:par} \\
+		\vec{x^{\top}}\vec{V_2}\vec{x}  + 2\vec{u_2^{\top}}\vec{x} + f_2 &= 0 \label{eq:hi} 
+\end{align}
 where,
 \begin{align*}
 		\vec{V_1} &= \myvec{0&0\\0&1} \text{,}\quad  
@@ -77,13 +69,11 @@ where,
 		\vec{X}=\myvec{\vec{x}\\1} 
 \end{align*}
 Here, $\vec{M_1}$ and $\vec{M_2}$ are symmetric, and $\vec{X}$ is called the homogeneous coordinate of $\vec{x}$. \\
-\\
 The dual conics of \eqref{eq:ppar} and \eqref{eq:phi} is given by
 \begin{align}
 		\vec{X^{\top}}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X} &= 0 \label{eq:pd} \\
 		\vec{X^{\top}}\mydet{\vec{M_2}}\vec{M_2^{-1}}\vec{X} &= 0 \label{eq:hd} 
 \end{align}
-\newpage
 The dual conics \eqref{eq:pd} and \eqref{eq:hd} intersect at most at 4 points $\vec{x_i}$. The corresponding common tangent(s) is given by \[ \myvec{\vec{x_i^{\top}}&1}\vec{X}=0 \label{eq:tangent_eqn} \numberthis \]
 \begin{align*}
 		\mydet{\vec{M_1}}\vec{M_1^{-1}} &\text{ can be written as } \myvec{\vec{N_1}&\vec{w_1}\\\vec{w_1^{\top}}&k_1} \\[0.5ex]
@@ -124,23 +114,13 @@ Therefore, the lines of \eqref{eq:dual_intersect} are given by
 		\vec{x} = \vec{h} + \kappa\vec{m_1} \quad \text{and} \quad
 		\vec{x} = \vec{h} + \kappa\vec{m_2} 
 \end{align*}
-\vspace{-0.5cm}
-\begin{figure}[h]
-\centering
-%\def\figwidth{\linewidth}
-%\def\figheight{0.35\textheight} % Feel free to change
-%\input{figs/plot1.png}
-\includegraphics[width=\columnwidth]{figs/dual_int.png}
-\label{fig:dual_int}
-\caption{Intersection of the Dual Curves}
-\end{figure}
-
+\newpage
 The points of intersection of the lines $\vec{x} = \vec{h} + \kappa\vec{m_k}$ with a dual conic, say $\vec{X^{\top}}\mydet{\vec{M_1}}\vec{M_1^{-1}}\vec{X}$, which are also the point(s) intersection of the dual conics, are given by
 \begin{align}
 		\vec{x_j} = \vec{h} + \kappa_j\vec{m_k}
 \end{align}
 where,
-{\small
+{\tiny
 \begin{multline*}
 \kappa_j = \frac{1}
 {
@@ -161,20 +141,30 @@ where,
 \brak{\vec{m_1^{\top}}\vec{N_1}\vec{m_1}}
 }
 }
-%\label{eq:tangent_roots}
 \end{multline*}
 }
-\\
-Upon substituting respective values we find that the dual conics \eqref{eq:pd} and \eqref{eq:hd} inersect at a single point, $P=\vec{a}=\myvec{0.5\\-0.5}$. 
+\vspace{-0.5cm}
+\begin{figure}[h]
+\centering
+%\def\figwidth{\linewidth}
+%\def\figheight{0.35\textheight} % Feel free to change
+%\input{figs/plot1.png}
+\includegraphics[width=\columnwidth]{figs/dual_int.png}
+\label{fig:dual_int}
+\caption{Intersection of the Dual Curves}
+\end{figure}
+
+Upon substituting respective values we find that the dual conics \eqref{eq:pd} and \eqref{eq:hd} inersect at a single point, $P=\vec{p}=\myvec{0.5\\-0.5}$. 
 \\[0.7ex]
 Then from \eqref{eq:tangent_eqn}, 
 \begin{align*}
-		\myvec{\vec{a^{\top}}&1}\vec{X} &= 0 \\
-		\vec{a^{\top}}\vec{x} + 1 &= 0 \\
+		\myvec{\vec{p^{\top}}&1}\vec{X} &= 0 \\
+		\vec{p^{\top}}\vec{x} + 1 &= 0 \\
 		\myvec{0.5&-0.5}\vec{x} &= -1 \label{eq:comm_tang} \numberthis
 \end{align*}
 Thus, \eqref{eq:comm_tang} is the equation of common tangent to the curves \eqref{eq:parab} and \eqref{eq:hyp}.
 \newpage
+
 \begin{figure}[h!]
 \centering
 %\def\figwidth{\linewidth}
@@ -184,5 +174,4 @@ Thus, \eqref{eq:comm_tang} is the equation of common tangent to the curves \eqre
 \label{fig:comm_tan}
 \caption{Common tangent to the given curves}
 \end{figure}
-
 \end{document}

@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.linalg as LA
 import sympy as sp
+#import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 #import tikzplotlib as tpl
@@ -44,8 +45,8 @@ def conic_intersect(V1,u1,f1,V2,u2,f2):
     intersect_pts = []
     
     for i in soln:
-        if(not i.is_real): 
-            print("complex found")
+        if(not i.is_real): #
+            #print("complex found")
             continue
         
         mu = float(i)
@@ -69,8 +70,8 @@ def conic_intersect(V1,u1,f1,V2,u2,f2):
             a = np.vstack((u.T + eta*p1.T, V))
             print(a)
             b = np.vstack((-f, eta*p1-u)) 
-            c = LA.lstsq(a,b,rcond=None)[0] 
-            print("Det of N is 0", c) 
+            c = LA.lstsq(a,b,rcond=None)[0] #
+            print("Det of N is 0", c) #None
             continue
         else:
             print("Det of N is negative")
@@ -86,7 +87,7 @@ def conic_intersect(V1,u1,f1,V2,u2,f2):
         m1 = omat@n1
         m2 = omat@n2
         
-        print("N1 and m1",end=" ") #common points
+        print("N1 and m1",end=" ")
         code, p1, p2 = line_conic_intersect(V1,u1,f1,c,m1)
         if(code == 0):
             print("1")
@@ -99,7 +100,7 @@ def conic_intersect(V1,u1,f1,V2,u2,f2):
             print("0")
             pass
 
-        print("N1 and m2",end=" ") #common points
+        print("N1 and m2",end=" ")
         code, p1, p2 = line_conic_intersect(V1,u1,f1,c,m2)
         if(code == 0):
             print("1")
