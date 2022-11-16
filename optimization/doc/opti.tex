@@ -1,0 +1,126 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage[cmex10]{amsmath}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[font=normal]{caption}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{scaled y ticks=false}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{tikz}
+
+\pgfplotsset{compat=1.11,
+ /pgfplots/ybar legend/.style={
+ /pgfplots/legend image code/.code={
+ \draw[##1,/tikz/.cd,yshift=-0.25em]
+ (0cm,0cm) rectangle (3pt,0.8em);},
+ },
+}
+
+\let\vec\mathbf
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+
+
+\title{Optimization Assignment}
+\author{Ahilan R - FWC22090}
+
+\begin{document}
+\maketitle
+
+\subsection*{\textbf{Problem}}
+Show that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$, where $a$ and $b$ are the semi-axes.
+%\subsection*{\textbf{Solution}}
+\subsection*{\textbf{Using Calculus}}
+Let's take given ellipse as 
+\begin{equation}
+		\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = 1 \label{eq:ell_og}
+\end{equation}
+We can write \eqref{eq:ell_og} as
+\[	x^2 + \cfrac{y^2}{\left( \frac{b}{a} \right) ^2} = a^2 \]
+\begin{equation}
+x^2 + Y^2 = a^2 \label{eq:ell_circ}
+\end{equation}
+Scaling along $y$-axis by a factor of $\frac{b}{a}$, we get new $Y$-axis. Here, \eqref{eq:ell_og} becomes \eqref{eq:ell_circ}, which is a circle with radius $a$. 
+
+\begin{figure}[h]
+\centering
+\def\figwidth{\linewidth}
+\def\figheight{0.35\textheight} % Feel free to change
+\input{plot}
+%\includegraphics[width=\columnwidth]{figs/plotnew.png}
+\label{fig:rough}
+%\caption{Rough sketch of given problem}
+\end{figure}
+
+Let $CE$ be perpendicular to $AB$. Then $CD=h$. $CD$ will pass through the center $O$ of the circle, since $h$ should be maximum for a given chord, for $\triangle ABC$ to have maximum area. Also $AD=DB=b$. Therefore, 
+\begin{equation}
+R = ar(\triangle ABC)= \frac{1}{2}(2b)h= bh \label{eq:arABC}
+\end{equation}
+From $\triangle ADO$, we have
+\begin{align}
+		b^2 =& a^2- (h-a)^2 \nonumber \\ %\[ {AD}^2= {OA}^2- {OD}^2 \] \\
+		=& 2ah-h^2 \label{eq:baseb}
+\end{align}
+Substituting \eqref{eq:baseb} in $R^2$ from \eqref{eq:arABC},
+\begin{align}
+		R^2 &= (2ah-h^2)h^2 \nonumber \\
+		&= 2ah^3-h^4 \\
+		\implies f(x) &= 2ax^3-x^4 \label{eq:fofx} \\
+		f^{\prime}(x) &= 6ax^2 -4x^3 \label{eq:fprime} \\
+		f^{\prime\prime}(x) &= 12ax -12x^2 \label{eq:fdprime}
+\end{align}
+
+On solving for maxima of $f(x)$ from \eqref{eq:fprime} and \eqref{eq:fdprime}, we get $x=\frac{3}{2}a$. Upon substitution in \eqref{eq:fofx}, we have
+\begin{align}
+		R^2 &= \cfrac{27}{16}a^4 \nonumber\\
+		\implies R &= \cfrac{3\sqrt{3}}{4}a^2 \label{eq:ar_circ}
+\end{align}
+
+On scaling back to the original axes, we get the area of the ellipse \eqref{eq:ell_og}, $S$. \eqref{eq:ar_circ} becomes
+\begin{align}
+		S &= \cfrac{3\sqrt{3}}{4}a^2 \brak{\cfrac{b}{a}} \nonumber \\
+		S &= \cfrac{3\sqrt{3}}{4}ab \label{eq:ar_ellip}
+\end{align}
+
+\subsection*{\textbf{Gradient Ascent}}
+
+Since $R$ is area, $R$ will be maximum if $R^2$ is also maximum. Using gradient ascent method we can find the maximum of $R^2$, i.e.\ \eqref{eq:fofx}.
+\begin{align}
+		x_{n+1} &= x_n + \alpha \nabla f(x_n) \\
+		x_{n+1} &= x_n + \alpha \brak{6ax^2-4x^3}
+\end{align}
+
+Suppose the semi-axes of the ellipse are $a=5$ and $b=3$. Taking $x_0 = 1$, $\alpha=0.0001$ and $\quad$precision $= 0.000000001$, values obtained using python are:
+\begin{align}
+		\boxed{\text{Maxima Point} = 7.499999956932471} \label{eq:maxPt} \\
+		\boxed{\text{Maxima} = 1054.687499999999} \label{eq:maxV}
+\end{align}
+\newpage
+The corresponding value of $S$ obtained using \eqref{eq:maxPt} and \eqref{eq:maxV} is, \[ \boxed{S_{opt}=19.48557158514986} \]
+The corresponding value of $S$ obtained using \eqref{eq:ar_ellip} is, \[ \boxed{S=19.48557158514987} \]
+\\
+Since, $S_{opt}=S$ it is verified that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$.
+\medskip
+
+\begin{figure}[h]
+\centering
+\def\figwidth{\linewidth}
+\def\figheight{0.315\textheight} % Feel free to change
+\input{fx}
+%\includegraphics[width=\columnwidth]{figs/plotnew.png}
+\label{fig:rough}
+%\caption{Rough sketch of given problem}
+\end{figure}
+
+\end{document}
