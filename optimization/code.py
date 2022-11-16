@@ -91,10 +91,11 @@ plt.text(cur_x, max_val,f'P({cur_x:.4f},{max_val:.4f})')
 plt.xlabel('$x$')
 plt.ylabel('$R^2$',rotation=0)
 plt.grid() 
+plt.legend(loc='best')
 plt.axis('auto')
 
 plt.savefig('/sdcard/fwc-1/optimization/figs/fx.png')
 plt.savefig('/sdcard/fwc-1/optimization/figs/fx.pdf')
-#tpl.save('fx.tex', axis_width=r'\figwidth', axis_height=r'\figheight')
+tpl.save('fx.tex', axis_width=r'\figwidth', axis_height=r'\figheight')
 subprocess.run(shlex.split("termux-open '/sdcard/fwc-1/optimization/figs/fx.pdf'"))
 # f(x) plot end

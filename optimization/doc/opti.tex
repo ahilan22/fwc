@@ -21,15 +21,15 @@
 }
 
 \let\vec\mathbf
-\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+%\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
 \providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
-\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-\providecommand{\abs}[1]{\left\vert#1\right\vert}
-\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
-\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
-\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%\providecommand{\abs}[1]{\left\vert#1\right\vert}
+%\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+%\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+%\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
 
 
 \title{Optimization Assignment}
@@ -58,9 +58,7 @@ Scaling along $y$-axis by a factor of $\frac{b}{a}$, we get new $Y$-axis. Here, 
 \def\figwidth{\linewidth}
 \def\figheight{0.35\textheight} % Feel free to change
 \input{plot}
-%\includegraphics[width=\columnwidth]{figs/plotnew.png}
 \label{fig:rough}
-%\caption{Rough sketch of given problem}
 \end{figure}
 
 Let $CE$ be perpendicular to $AB$. Then $CD=h$. $CD$ will pass through the center $O$ of the circle, since $h$ should be maximum for a given chord, for $\triangle ABC$ to have maximum area. Also $AD=DB=b$. Therefore, 
@@ -89,7 +87,7 @@ On solving for maxima of $f(x)$ from \eqref{eq:fprime} and \eqref{eq:fdprime}, w
 
 On scaling back to the original axes, we get the area of the ellipse \eqref{eq:ell_og}, $S$. \eqref{eq:ar_circ} becomes
 \begin{align}
-		S &= \cfrac{3\sqrt{3}}{4}a^2 \brak{\cfrac{b}{a}} \nonumber \\
+	S &= R \brak{\cfrac{b}{a}} \label{eq:scaleBack} \\
 		S &= \cfrac{3\sqrt{3}}{4}ab \label{eq:ar_ellip}
 \end{align}
 
@@ -97,8 +95,8 @@ On scaling back to the original axes, we get the area of the ellipse \eqref{eq:e
 
 Since $R$ is area, $R$ will be maximum if $R^2$ is also maximum. Using gradient ascent method we can find the maximum of $R^2$, i.e.\ \eqref{eq:fofx}.
 \begin{align}
-		x_{n+1} &= x_n + \alpha \nabla f(x_n) \\
-		x_{n+1} &= x_n + \alpha \brak{6ax^2-4x^3}
+	x_{n+1} &= x_n + \alpha \nabla f(x_n) \nonumber \\
+	&= x_n + \alpha \brak{6ax^2-4x^3}
 \end{align}
 
 Suppose the semi-axes of the ellipse are $a=5$ and $b=3$. Taking $x_0 = 1$, $\alpha=0.0001$ and $\quad$precision $= 0.000000001$, values obtained using python are:
@@ -107,7 +105,7 @@ Suppose the semi-axes of the ellipse are $a=5$ and $b=3$. Taking $x_0 = 1$, $\al
 		\boxed{\text{Maxima} = 1054.687499999999} \label{eq:maxV}
 \end{align}
 \newpage
-The corresponding value of $S$ obtained using \eqref{eq:maxPt} and \eqref{eq:maxV} is, \[ \boxed{S_{opt}=19.48557158514986} \]
+The corresponding value of $S$ obtained using \eqref{eq:scaleBack} and \eqref{eq:maxV} is, \[ \boxed{S_{opt}=19.48557158514986} \]
 The corresponding value of $S$ obtained using \eqref{eq:ar_ellip} is, \[ \boxed{S=19.48557158514987} \]
 \\
 Since, $S_{opt}=S$ it is verified that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$.
@@ -118,9 +116,7 @@ Since, $S_{opt}=S$ it is verified that the greatest triangle inscribed in an ell
 \def\figwidth{\linewidth}
 \def\figheight{0.315\textheight} % Feel free to change
 \input{fx}
-%\includegraphics[width=\columnwidth]{figs/plotnew.png}
 \label{fig:rough}
-%\caption{Rough sketch of given problem}
 \end{figure}
 
 \end{document}
