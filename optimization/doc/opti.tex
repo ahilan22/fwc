@@ -1,6 +1,7 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage[cmex10]{amsmath}
-\usepackage{bm}
+\usepackage[short]{optidef}
+%\usepackage{bm}
 \usepackage{graphicx}
 \usepackage[font=normal]{caption}
 
@@ -39,10 +40,10 @@
 \maketitle
 
 \subsection*{\textbf{Problem}}
-Show that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$, where $a$ and $b$ are the semi-axes.
+Find the maximum area of a triangle which can be inscribed in an ellipse.
 %\subsection*{\textbf{Solution}}
 \subsection*{\textbf{Using Calculus}}
-Let's take given ellipse as 
+Let's take an ellipse,
 \begin{equation}
 		\cfrac{x^2}{a^2} + \cfrac{y^2}{b^2} = 1 \label{eq:ell_og}
 \end{equation}
@@ -58,7 +59,7 @@ Scaling along $y$-axis by a factor of $\frac{b}{a}$, we get new $Y$-axis. Here, 
 \def\figwidth{\linewidth}
 \def\figheight{0.35\textheight} % Feel free to change
 \input{plot}
-\label{fig:rough}
+\label{fig:roughSketch}
 \end{figure}
 
 Let $CE$ be perpendicular to $AB$. Then $CD=h$. $CD$ will pass through the center $O$ of the circle, since $h$ should be maximum for a given chord, for $\triangle ABC$ to have maximum area. Also $AD=DB=b$. Therefore, 
@@ -93,7 +94,14 @@ On scaling back to the original axes, we get the area of the ellipse \eqref{eq:e
 
 \subsection*{\textbf{Gradient Ascent}}
 
-Since $R$ is area, $R$ will be maximum if $R^2$ is also maximum. Using gradient ascent method we can find the maximum of $R^2$, i.e.\ \eqref{eq:fofx}.
+Since area is a positive quantity, $R$ will be maximum if $R^2$ is also maximum. So, the optimization problem is,
+\begin{maxi}
+{x}{2ax^3-x^4}{}{}
+\addConstraint{x}{>0}{}
+\addConstraint{x}{<2a}{}
+\end{maxi}
+
+Using gradient ascent method we can find the maximum of $R^2$, i.e.\ \eqref{eq:fofx}.
 \begin{align}
 	x_{n+1} &= x_n + \alpha \nabla f(x_n) \nonumber \\
 	&= x_n + \alpha \brak{6ax^2-4x^3}
@@ -104,11 +112,11 @@ Suppose the semi-axes of the ellipse are $a=5$ and $b=3$. Taking $x_0 = 1$, $\al
 		\boxed{\text{Maxima Point} = 7.499999956932471} \label{eq:maxPt} \\
 		\boxed{\text{Maxima} = 1054.687499999999} \label{eq:maxV}
 \end{align}
-\newpage
 The corresponding value of $S$ obtained using \eqref{eq:scaleBack} and \eqref{eq:maxV} is, \[ \boxed{S_{opt}=19.48557158514986} \]
 The corresponding value of $S$ obtained using \eqref{eq:ar_ellip} is, \[ \boxed{S=19.48557158514987} \]
-\\
-Since, $S_{opt}=S$ it is verified that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$.
+\[ \implies S_{opt}= S \]
+Hence, we have found the maximum area of a triangle that can be inscribed in an ellipse.
+%Since, $S_{opt}=S$ it is verified that the greatest triangle inscribed in an ellipse has area of $\cfrac{3\sqrt{3}}{4}{}ab$.
 \medskip
 
 \begin{figure}[h]
