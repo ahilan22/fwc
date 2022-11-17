@@ -104,7 +104,7 @@ Since area is a positive quantity, $R$ will be maximum if $R^2$ is also maximum.
 Using gradient ascent method we can find the maximum of $R^2$, i.e.\ \eqref{eq:fofx}.
 \begin{align}
 	x_{n+1} &= x_n + \alpha \nabla f(x_n) \nonumber \\
-	&= x_n + \alpha \brak{6ax^2-4x^3}
+	&= x_n + \alpha \brak{6a{x_n}^2-4{x_n}^3}
 \end{align}
 
 Suppose the semi-axes of the ellipse are $a=5$ and $b=3$. Taking $x_0 = 1$, $\alpha=0.0001$ and $\quad$precision $= 0.000000001$, values obtained using python are:
