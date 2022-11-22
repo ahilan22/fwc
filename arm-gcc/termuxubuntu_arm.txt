@@ -1,0 +1,62 @@
+proot-distro login ubuntu-20.04
+apt update 
+apt upgrade
+
+#Install ssh-server
+apt install openssh-server
+
+# Install arm toolchain and hardware tools
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
+
+#ARM Hello world
+#Test the GNU RM GCC Embedded toolchain
+arm-none-eabi-gcc --version
+
+#Download the pygmy-sdk
+cd /data/data/com.termux/files/home/
+git clone --recursive https://github.com/optimuslogic/pygmy-dev
+
+#Download the helloworld program
+cd /data/data/com.termux/files/home/
+mkdir arm-examples
+cd arm-examples
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
+cd blink/GCC_Project
+make -j4
+
+#blink.bin should be generated in ouput/bin/ directory
+#Transfer .bin file to RPI
+scp  output/bin/blink.bin pi@192.168.0.114:
+#Suitably modify the ip address above
+
+#On RPI execute the following 
+
+#If Tinyfpga is not installed 
+git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo apt install python3-pip
+sudo pip3 install tinyfpgab pyserial
+sudo reboot
+
+#This will flash the .bin file to the pygmy
+sudo python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
+
+#On termuxubuntu, the source c file is located at
+blink/src/main.c
+
+#You may make changes here to modify the colour of the led etc..
+
+
+#End ARM testing
+
+#In case the default arm-gcc does not work 
+##For RPI4 in 64 -bit mode (Ubuntu 20.04):
+##OR for Termux on Android (ubuntu 20.04 proot)#Download and unzip:
+#cd $INSTALL_DIR
+#wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+
+
+
+
+
