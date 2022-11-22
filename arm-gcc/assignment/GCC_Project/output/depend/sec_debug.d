@@ -1,9 +1,9 @@
-/sdcard/fwc-1/arm-gcc/ass2/GCC_Project/output/sec_debug.o: \
- /sdcard/fwc-1/arm-gcc/ass2/src/sec_debug.c \
- /sdcard/fwc-1/arm-gcc/ass2/inc/Fw_global_config.h \
+/sdcard/fwc-1/arm-gcc/assignment/GCC_Project/output/sec_debug.o: \
+ /sdcard/fwc-1/arm-gcc/assignment/src/sec_debug.c \
+ /sdcard/fwc-1/arm-gcc/assignment/inc/Fw_global_config.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /sdcard/fwc-1/arm-gcc/ass2/inc/FreeRTOSConfig.h \
- /sdcard/fwc-1/arm-gcc/ass2/inc/Fw_global_config.h \
+ /sdcard/fwc-1/arm-gcc/assignment/inc/FreeRTOSConfig.h \
+ /sdcard/fwc-1/arm-gcc/assignment/inc/Fw_global_config.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -16,16 +16,16 @@
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cmInstr.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cmFunc.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cm4_simd.h \
- /sdcard/fwc-1/arm-gcc/ass2/inc/sec_debug.h \
+ /sdcard/fwc-1/arm-gcc/assignment/inc/sec_debug.h \
  /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/dbg_uart.h
 
-/sdcard/fwc-1/arm-gcc/ass2/inc/Fw_global_config.h:
+/sdcard/fwc-1/arm-gcc/assignment/inc/Fw_global_config.h:
 
 /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/sdcard/fwc-1/arm-gcc/ass2/inc/FreeRTOSConfig.h:
+/sdcard/fwc-1/arm-gcc/assignment/inc/FreeRTOSConfig.h:
 
-/sdcard/fwc-1/arm-gcc/ass2/inc/Fw_global_config.h:
+/sdcard/fwc-1/arm-gcc/assignment/inc/Fw_global_config.h:
 
 /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 
@@ -51,6 +51,6 @@
 
 /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cm4_simd.h:
 
-/sdcard/fwc-1/arm-gcc/ass2/inc/sec_debug.h:
+/sdcard/fwc-1/arm-gcc/assignment/inc/sec_debug.h:
 
 /data/data/com.termux/files/home/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/dbg_uart.h:
