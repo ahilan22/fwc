@@ -1,0 +1,22 @@
+{
+    "name": "libesp",
+    "version": "2.3.0",
+    "description": "A library built on esp-idf containing useful additional support/library functions.",
+    "keywords": "utility, util, debug, timer, delay, wait, stats, task, stack, scheduler, freertos, input, esp-idf, esp32, esp8266",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/khoek/libesp.git"
+    },
+    "authors": [
+        {
+            "name": "Keeley Hoek",
+            "email": "keeley@hoek.io",
+            "url": "https://hoek.io"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/khoek/libesp",
+    "frameworks": "espidf",
+    "platforms": "espressif32",
+    "dependencies": {}
+}
