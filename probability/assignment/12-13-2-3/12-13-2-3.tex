@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref,xcolor}
+\hypersetup{
+    colorlinks,
+    urlcolor={black}	%black!50!blue
+}
+
+\def\inputGnumericTable{}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\setlist[enumerate]{font=\small\bfseries}
+
+\begin{document}
+
+\title{NCERT: Class XII}
+\author{\Large Ahilan R - FWC22090}
+\date{}
+
+\maketitle
+
+\begin{enumerate}[label=13.\arabic{enumi}.\arabic{enumii}]
+\numberwithin{equation}{enumi}
+\numberwithin{table}{enumi}
+
+%%%%% 13.2.3
+\setcounter{enumi}{1}
+\setcounter{enumii}{3}
+
+\item A box of oranges is inspected by examining three randomly selected oranges drawn without replacement. If all the three oranges are good, the box is approved for sale, otherwise, it is rejected. Find the probability that a box containing 15 oranges out of which 12 are good and 3 are bad ones will be approved for sale.\\[1ex]
+	\solution
+		Let the selected oranges be $X = \cbrak{0,1,2}$ and the quality of orange be $Y = \cbrak{0,1}$, where 0 means bad and 1 means good. The desired set of selection is \cbrak{01,11,21}.\\[-0.7cm]
+
+	\begin{table}[h!]
+	\small
+	\centering
+	%\subimport{../tables/}{table1.tex}
+	\input{../tables/table1.tex}
+	%\caption{}
+	%\label{table:12table1}
+	\end{table}
+
+		Probability of the given box being approved for sale , (using multiplication rule)	%from \ref{table:12table1}
+	\begin{align}
+		=& \; \text{P}(01 , 11 , 21) \\
+		=& \; \text{P}(01)\text{P}(01|11)\text{P}(01|11 , 21) \\
+		=& \; \cfrac{12}{15}\times \cfrac{11}{14}\times \cfrac{10}{13}= \cfrac{44}{91}
+	\end{align}
+
+\end{enumerate}
+\end{document}

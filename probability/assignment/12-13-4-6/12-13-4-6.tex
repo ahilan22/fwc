@@ -1,0 +1,64 @@
+%\documentclass[class=article, crop=false]{standalone}
+\documentclass{article}
+
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref,xcolor}
+\hypersetup{
+    colorlinks,
+    urlcolor={black}	%black!50!blue
+}
+
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+\setlist[enumerate]{font=\small\bfseries}
+
+\begin{document}
+
+\title{NCERT: Class XII}
+\author{\Large Ahilan R - FWC22090}
+\date{}
+
+\maketitle
+
+\begin{enumerate}[label=13.\arabic{enumi}.\arabic{enumii}]
+\numberwithin{equation}{enumi}
+\numberwithin{table}{enumi}
+
+\setcounter{enumi}{3}
+\setcounter{enumii}{6}
+
+\item From a lot of 30 bulbs which include 6 defectives, a sample of 4 bulbs is drawn at random with replacement. Find the probability distribution of the number of defective bulbs.\\[1ex]
+	\solution
+		Let $X$ = number of defective bulbs in a draw. Let $Y=\cbrak{0,1}$ where $Y=0 \text{ and } Y=1$ be the event of drawing a non-defective bulb and a defective bulb.
+	\begin{align*}
+		\text{P}\brak{Y=1}= p = \dfrac{6}{30}, \quad \text{P}\brak{Y=0}= q = \dfrac{24}{30}
+	\end{align*}
+		\[p+q=1 \implies \text{Bernoulli trials}\]
+		Hence, we can define our probability distribution as binomial distribution, B$\brak{4,\frac{6}{30}}$. It's probability function is \[\text{P($X=k$)}=\comb{4}{k}p^kq^{4-k} \numberthis \]\\[-0.9cm]
+	\begin{table}[h!]
+	\normalsize
+	\centering
+		%\newcolumntype{a}{>{\columncolor[gray]{0.95}}c}
+			\begin{tabular}[20pt]{|c|c|c|c|c|c|} \hline		%>{\columncolor[gray]{0.8}}
+			$X$&0&1&2&3&4 \T \\ \hline
+			P($X$)&$\cfrac{256}{625}$&$\cfrac{256}{625}$&$\cfrac{96}{625}$&$\cfrac{16}{625}$&$\cfrac{1}{625}$\\[1.5ex] \hline
+		\end{tabular}\\[2ex]
+		\caption{Probability Distribution of $X$}
+	\end{table}
+
+\noindent\fbox{%
+    \parbox{\linewidth}{%
+   	\url{https://github.com/ahilan22/fwc-2/tree/main/probability/assignment/codes/12-13-4-6.py}
+   	%}%
+    }%
+}
+
+\end{enumerate}
+\end{document}
