@@ -30,9 +30,7 @@
     ```
 1. **making table**, (place this block where the table is to be placed and also give proper location for table.tex in \input)
 	```latex
-	\begin{table}[h]
-		\input{tables/table}
-	\end{table}
+	\input{tables/table}
     ```
 ## in table.tex
 1. for obtaining fractions as in math mode, etc..
@@ -48,3 +46,21 @@
 		\multicolumn{1}{|p{\gnumericColA}|}%
 		{\gnumericPB{\centering}\gnumbox{$\frac{2}{5}}$}
     ```
+1. add caption and label in the longtable environment, like
+```latex
+\begin{longtable}
+	...
+	...
+	\hhline{|---|}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$\phi$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{Subcarrier phase}}
+	\\
+	\hhline{|-|-|-|}
+	
+	\caption{Symbol Description}
+	\label{table:symbdesc}
+
+\end{longtable}
+```
